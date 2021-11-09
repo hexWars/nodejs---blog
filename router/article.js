@@ -7,9 +7,16 @@ const article = require('../middleware/article')
 const category = require('../middleware/category')
 const articleApp = express()
 
-articleApp.get('/list/:id',[article.getListByCategoryId,category.getList,category.getCategoryById],(req, res) => {
-	let {articles,categories,category} = req
-	res.render('list',{articles:articles,categories:categories,category:category})
+articleApp.use(category.getList)
+
+articleApp.get('/list/:id', [article.getListByCategoryId, category.getCategoryById], (req, res) => {
+	let {articles, categories, category} = req
+	res.render('list', {articles: articles, categories: categories, category: category})
+})
+
+articleApp.get('/:id', (req, res) => {
+	let {categories} = req
+	res.render('article', {categories: categories})
 })
 
 module.exports = articleApp

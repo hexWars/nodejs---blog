@@ -22,6 +22,7 @@ app.use(express.static('static'))
 app.use('/',require('./router/index'))
 app.use('/index',require('./router/index'))
 app.use('/article',require('./router/article'))
+app.use('/search',require('./router/search'))
 
 // 监听服务器
 app.listen(3000)

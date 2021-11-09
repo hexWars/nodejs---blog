@@ -53,6 +53,23 @@ module.exports = class Article extends require('./model') {
 		})
 	}
 
+	/**
+	 * 获取指定关键词的文章列表
+	 * @param Keyword
+	 * @returns {Promise<unknown>}
+	 */
+	static getListByKeywrod(Keyword) {
+		return new Promise((resolve,reject)=>{
+			let sql = 'select id,title,content,`time` from article where title like ? order by time desc'
+			this.query(sql, `%${Keyword}%`).then(results=>{
+				resolve(results)
+			}).catch(err=>{
+				console.log('获取指定关键词的文章列表失败: ${err.message}')
+				reject(err)
+			})
+		})
+	}
+
 
 }
 

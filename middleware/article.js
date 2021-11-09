@@ -41,6 +41,18 @@ module.exports = {
 		}).catch(err=>{
 			next(err)
 		})
+	},
+	/**
+	 * 获取指定关键词的文章列表
+	 */
+	getListByKeywrod:(req,res,next)=>{
+		let Keyword = req.query.keyword
+		Article.getListByKeywrod(Keyword).then(results=>{
+			req.articles = results
+			next()
+		}).catch(err=>{
+			next(err)
+		})
 	}
 }
 
