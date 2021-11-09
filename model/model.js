@@ -1,4 +1,3 @@
-
 const mysql = require('mysql')
 
 /**
@@ -15,12 +14,12 @@ module.exports = class Model {
 	 */
 	static connection() {
 		Model.conn = mysql.createConnection({
-			host:'127.0.0.1',
+			host: '127.0.0.1',
 			user: 'root',
 			password: '818181',
 			database: 'blog'
 		})
-		Model.conn.connect(err=>{
+		Model.conn.connect(err => {
 			if (err) {
 				console.log('数据库连接失败: ${err.message}')
 			}
@@ -42,10 +41,10 @@ module.exports = class Model {
 	 * @param params 给sql语句的占位符进行赋值的参数
 	 * @returns {Promise<unknown>}
 	 */
-	static query(sql,params=[]) {
-		return new Promise((resolve,reject)=> {
+	static query(sql, params = []) {
+		return new Promise((resolve, reject) => {
 			this.connection()
-			Model.conn.query(sql,params,(err,results)=>{
+			Model.conn.query(sql, params, (err, results) => {
 				if (err) {
 					reject(err)
 				} else {
