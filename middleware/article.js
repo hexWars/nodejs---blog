@@ -53,6 +53,18 @@ module.exports = {
 		}).catch(err=>{
 			next(err)
 		})
+	},
+	/**
+	 * 获取指定文章详情
+	 */
+	getArticleById:(req,res,next)=>{
+		let {id} = req.params
+		Article.getArticleById(id).then(results=>{
+			req.article = results
+			next()
+		}).catch(err=>{
+			next(err)
+		})
 	}
 }
 

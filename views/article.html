@@ -3,19 +3,19 @@
         <nav>
             <ol class="breadcrumb bg-white">
                 <li class="breadcrumb-item"><a href="/">首页</a></li>
-                <li class="breadcrumb-item"><a href="#">类目名称</a></li>
-                <li class="breadcrumb-item active">文章标题</li>
+                <li class="breadcrumb-item"><a href="#"><%= article.name %></a></li>
+                <li class="breadcrumb-item active"><%= article.title %></li>
             </ol>
         </nav>
         <div class="card">
             <div class="card-header bg-white">
-                <h3 class="card-title m-0">文章标题</h3>
+                <h3 class="card-title m-0"><%= article.title %></h3>
                 <p class="text-muted small mt-2 m-0">
-                    <span class="mr-3">发表时间：2018-10-10 20:14:52</span>
-                    <span class="mr-1">点击：120</span>
+                    <span class="mr-3">发表时间：<%= article.time.toLocaleString() %></span>
+                    <span class="mr-1">点击：<%= article.hits %></span>
                 </p>
             </div>
-            <div class="card-body">文章内容...</div>
+            <div class="card-body"><%- article.content %></div>
             <div class="card-footer bg-white border-0">
                 <span class="badge badge-pill">标签1</span>
                 <span class="badge badge-pill">标签2</span>
