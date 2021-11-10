@@ -1,4 +1,5 @@
 const Article = require('../model/article')
+const Tab = require('../model/tab')
 
 /**
  * 文章中间件
@@ -65,7 +66,21 @@ module.exports = {
 		}).catch(err=>{
 			next(err)
 		})
-	}
+	},
+	/**
+	 * 获取指定的文章标签列表
+	 */
+	getTabs:(req,res,next)=>{
+		let id = req.params.id
+		Tab.getListArticleId(id).then(results=>{
+			req.tabs = results
+			next()
+		}).catch(err=>{
+			next(err)
+		})
+	},
+
+
 }
 
 

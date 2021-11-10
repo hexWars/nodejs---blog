@@ -17,11 +17,9 @@
             </div>
             <div class="card-body"><%- article.content %></div>
             <div class="card-footer bg-white border-0">
-                <span class="badge badge-pill">标签1</span>
-                <span class="badge badge-pill">标签2</span>
-                <span class="badge badge-pill">标签3</span>
-                <span class="badge badge-pill">标签4</span>
-                <span class="badge badge-pill">标签5</span>
+                <% tabs.forEach(tab => { %>
+                    <span class="badge badge-pill"><%=tab.name%></span>
+                <% }) %>
             </div>
         </div>
         <nav>
