@@ -86,6 +86,40 @@ module.exports = class Article extends require('./model') {
 		})
 	}
 
+	/**
+	 * 获取上一篇文章
+	 * @param id
+	 * @returns {Promise<unknown>}
+	 */
+	static getLastArticle(id) {
+		return new Promise((resolve,reject)=>{
+			let sql = 'select id,title from article where id < ? order by id desc limit 1'
+			this.query(sql, id).then(results=>{
+				resolve(results[0])
+			}).catch(err=>{
+				console.log('获取上一篇文章失败: ${err.message}')
+				reject(err)
+			})
+		})
+	}
+
+	/**
+	 * 获取下一篇文章
+	 * @param id
+	 * @returns {Promise<unknown>}
+	 */
+	static getNextArticle(id) {
+		return new Promise((resolve,reject)=>{
+			let sql = 'select id,title from article where id > ? order by id asc limit 1'
+			this.query(sql, id).then(results=>{
+				resolve(results[0])
+			}).catch(err=>{
+				console.log('获取下一篇文章失败: ${err.message}')
+				reject(err)
+			})
+		})
+	}
+
 
 }
 

@@ -24,12 +24,16 @@
         </div>
         <nav>
             <ul class="pagination mt-3">
+                <% if (last) { %>
                 <li class="page-item">
-                    <a class="page-link" href="#">上一篇：文章标题</a>
+                    <a class="page-link" href="/article/<%=last.id%>">上一篇：<%=last.title%></a>
                 </li>
+                <% } %>
+                <% if (next) {%>
                 <li class="page-item ml-auto">
-                    <a class="page-link" href="#">下一篇：文章标题</a>
+                    <a class="page-link" href="/article/<%=next.id%>">下一篇：<%=next.title%></a>
                 </li>
+                <% } %>
             </ul>
         </nav>
     </div>
