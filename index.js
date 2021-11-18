@@ -18,11 +18,15 @@ app.engine('html', require('ejs').renderFile)
 //静态资源配置
 app.use(express.static('static'))
 
+//登录post请求处理
+app.use(express.urlencoded({extended:true}))
+
 // 调用首页子应用
 app.use('/',require('./router/index'))
 app.use('/index',require('./router/index'))
 app.use('/article',require('./router/article'))
 app.use('/search',require('./router/search'))
+app.use('/login',require('./router/login'))
 
 // 监听服务器
 app.listen(3000)
