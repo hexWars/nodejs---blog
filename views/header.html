@@ -36,17 +36,21 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
         </form>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a href="/login" class="nav-link">登录</a>
-            </li>
+            <% if (user) { %>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">
-                    admin
+                    <%= user.username %>
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/user/logout">退出</a>
                 </div>
             </li>
+            <% } else {%>
+            <li class="nav-item">
+                <a href="/login" class="nav-link">登录</a>
+            </li>
+            <% } %>
+
         </ul>
     </div>
 </nav>

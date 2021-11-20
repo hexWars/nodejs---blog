@@ -19,6 +19,7 @@ loginApp.post('/',(req,res,next) => {
 	User.login(username,password).then(result=>{
 		console.log(username + " -- " + password)
 		if (result) {
+			req.session.user = result
 			res.redirect('/')
 		} else {
 			res.render('login',{msg:'登录失败! 用户名或者密码错误'})
