@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>首页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1658828_vud4w73neg.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="../static/img/logo.png" width="30" height="30" alt="">
+            个人中心
+        </a>
+        <div class="navbar-nav">
+            <a href="../index.html" class="nav-link">博客首页</a>
+        </div>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">
+                    admin
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#">个人中心</a>
+                    <a class="dropdown-item" href="/user/logout">退出</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid vh-100">
+        <div class="row h-100">
+            <div class="col-2 bg-white border-right nav-left p-0">
+                <div class="row text-center mt-3  px-5">
+                    <a href="../article/add.html" class="btn btn-primary rounded-0 col">发表博文</a>
+                </div>
+                <div class="list-group list-group-flush border-top border-bottom mt-3 text-center">
+                    <li class="list-group-item list-group-item-action">
+                        <a href="../index.html" class="text-decoration-none text-secondary">
+                            <i class="iconfont icon-home pr-1"></i>个人中心
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="../article/index.html" class="text-decoration-none text-secondary">
+                            <i class="iconfont icon-neirongguanli pr-1"></i>文章管理
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action active">
+                        <a href="../category/index.html" class="text-decoration-none text-secondary">
+                            <i class="iconfont icon-leimuguanli pr-1"></i>类目管理
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="../log/index.html" class="text-decoration-none text-secondary">
+                            <i class="iconfont icon-log pr-1"></i>查看日志
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="../account/index.html" class="text-decoration-none text-secondary">
+                            <i class="iconfont icon-zhanghuguanli pr-1"></i>账户管理
+                        </a>
+                    </li>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="p-3 border mb-3 bg-white">
+                    <h4 class="mb-0">类目管理</h4>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header bg-primary text-white d-flex justify-content-between">
+                                <h6 class="mb-0 align-self-center">类目列表</h6>
+                            </div>
+                            <div class="card-body">
+                                <table class="table text-center">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>名称</th>
+                                            <th>排序</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>1</th>
+                                            <td title="双击修改"><input type="text" name="name" value="栏目1"
+                                                    class="form-control text-center bg-white border-0 dbcedit" onchange="sub_name(1,this.value)" disabled>
+                                            </td>
+                                            <td title="双击修改"><input type="text" name="index" value="1"
+                                                    class="form-control text-center bg-white border-0 dbcedit" disabled>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-link text-danger" onclick="del(1)"><i class="iconfont icon-delete"></i>删除</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>2</th>
+                                            <td title="双击修改"><input type="text" name="name" value="栏目2"
+                                                    class="form-control text-center bg-white border-0 dbcedit" disabled>
+                                            </td>
+                                            <td title="双击修改"><input type="text" name="index" value="1"
+                                                    class="form-control text-center bg-white border-0 dbcedit" disabled>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-link text-danger" onclick="del(1)"><i class="iconfont icon-delete"></i>删除</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>3</th>
+                                            <td title="双击修改"><input type="text" name="name" value="栏目3"
+                                                    class="form-control text-center bg-white border-0 dbcedit" disabled>
+                                            </td>
+                                            <td title="双击修改"><input type="text" name="index" value="1"
+                                                    class="form-control text-center bg-white border-0 dbcedit" disabled>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-link text-danger" onclick="del(1)"><i class="iconfont icon-delete"></i>删除</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>新增</th>
+                                            <td><input type="text" name="name" value=""
+                                                    class="form-control text-center bg-white"></td>
+                                            <td><input type="text" name="index" value=""
+                                                    class="form-control text-center bg-white"></td>
+                                            <td>
+                                                <button class="btn btn-link text-primary" onclick="save(this)"><i class="iconfont icon-bianji"></i>保存</button>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.6/holder.min.js"></script>
+    <script src="https://gw.alipayobjects.com/os/lib/antv/g2/3.5.12/dist/g2.min.js"></script>
+    <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.2/dist/data-set.min.js"></script>
+    <script src="../static/js/public.js"></script>
+    <script>
+        function sub_name(id,name){
+            console.log(id,name)
+        }
+
+        function save(t){
+            let name = $(t).parents('tr').find("[name='name']").val()
+            let index = $(t).parents('tr').find("[name='index']").val()
+            console.log(name,index)
+        }
+
+        function del(id){
+            if(confirm('确认删除?')){
+                console.log(id)
+            }
+        }
+    </script>
+</body>
+
+</html>
