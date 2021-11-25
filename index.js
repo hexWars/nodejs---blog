@@ -37,6 +37,8 @@ app.use('/article', require('./router/article'))
 app.use('/search', require('./router/search'))
 app.use('/login', require('./router/login'))
 
+//进行权限管理
+app.use('/admin/?*',require('./middleware/auth').allowToAdmin)
 //后台首页
 app.use('/admin/',require('./router/admin/index'))
 app.use('/admin/index',require('./router/admin/index'))
