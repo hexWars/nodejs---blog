@@ -3,10 +3,10 @@
  */
 const express = require('express')
 const indexApp = express()
+const user = require('../../middleware/user')
 
-
-indexApp.get('/',(req, res) => {
-	res.render('admin/index',{user:req.user})
+indexApp.get('/',user.lastLoginTime,(req, res) => {
+	res.render('admin/index',{user:req.user,lastLoginTime:req.lastLoginTime})
 })
 
 
