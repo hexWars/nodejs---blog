@@ -37,6 +37,10 @@ app.use('/article', require('./router/article'))
 app.use('/search', require('./router/search'))
 app.use('/login', require('./router/login'))
 
+//后台首页
+app.use('/admin/',require('./router/admin/index'))
+app.use('/admin/index',require('./router/admin/index'))
+
 // 监听服务器
 app.listen(3000)
 
