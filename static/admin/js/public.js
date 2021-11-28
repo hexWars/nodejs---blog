@@ -159,3 +159,13 @@ function showToasts(title, message) {
     })
     toasts.toast('show')
 }
+
+
+
+
+if ($('.list-group-item').length) {
+    let href = location.pathname;
+    console.log(href)
+    $(`.list-group-item a[href='${href}']`).parent().addClass('active')
+}
+

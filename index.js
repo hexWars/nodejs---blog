@@ -42,6 +42,21 @@ app.use('/admin/?*',require('./middleware/auth').allowToAdmin)
 //后台首页
 app.use('/admin',require('./router/admin/index'))
 app.use('/admin/index',require('./router/admin/index'))
+//调用后台文章管理
+app.use('/admin/article',require('./router/admin/article'))
+//后台类目管理
+app.use('/admin/category',require('./router/admin/category'))
+//后台日志管理
+app.use('/admin/log',require('./router/admin/log'))
+//后台账户管理
+app.use('/admin/account',require('./router/admin/account'))
+
+
+
+app.get('/user/logout',(req,res)=>{
+	req.session.user = null
+	res.render('login',{mas:'退出成功'})
+})
 
 // 监听服务器
 app.listen(3000)
