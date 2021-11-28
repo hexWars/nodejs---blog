@@ -1,5 +1,5 @@
 if ($('#g2_container').length) {
-    let url = 'pv.json'
+    let url = '/admin/pvs'
 
     const sliderDiv = document.createElement('div');
     sliderDiv.id = 'slider';

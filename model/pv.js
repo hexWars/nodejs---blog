@@ -20,6 +20,21 @@ module.exports = class PV extends require('./model') {
 		})
 	}
 
+	/**
+	 * 获取全部访问量
+	 */
+	static getAll() {
+		return new Promise((resolve,reject)=>{
+			let sql = 'select time,hits from pv order by time asc'
+			this.query(sql).then(results=>{
+				resolve(results)
+			}).catch(err=>{
+				console.log('获取全部访问量: ${err.message}')
+				reject(err)
+			})
+		})
+	}
+
 
 
 
