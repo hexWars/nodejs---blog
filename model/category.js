@@ -37,6 +37,22 @@ module.exports = class Category extends require('./model') {
 
 
 
+	/**
+	 * 总类目数
+	 * @param
+	 * @returns {Promise<unknown>}
+	 */
+	static getCount() {
+		return new Promise((resolve,reject)=>{
+			let sql = 'select count(1) as `count` from category'
+			this.query(sql).then(results=>{
+				resolve(results[0].count)
+			}).catch(err=>{
+				console.log('总类目数: ${err.message}')
+				reject(err)
+			})
+		})
+	}
 
 }
 

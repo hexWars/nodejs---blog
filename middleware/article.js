@@ -108,6 +108,19 @@ module.exports = {
 		}).catch(err => {
 			next(err)
 		})
+	},
+
+	/**
+	 *
+	 */
+	getCount: (req, res, next) => {
+		let id = req.params.id
+		Article.getCount().then(results => {
+			req.articleCount = results
+			next()
+		}).catch(err => {
+			next(err)
+		})
 	}
 
 }

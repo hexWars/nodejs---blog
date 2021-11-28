@@ -1,4 +1,5 @@
 const Category = require('../model/category')
+const Article = require("../model/article");
 
 /**
  * 文章类目录中间件
@@ -25,6 +26,18 @@ module.exports = {
 		let id = req.params.id
 		Category.getCategoryById(id).then(results => {
 			req.category = results
+			next()
+		}).catch(err => {
+			next(err)
+		})
+	},
+
+	/**
+	 *
+	 */
+	getCount: (req, res, next) => {
+		Category.getCount().then(results => {
+			req.categoryCount = results
 			next()
 		}).catch(err => {
 			next(err)
