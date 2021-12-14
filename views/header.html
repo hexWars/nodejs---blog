@@ -34,22 +34,22 @@
                 <input class="form-control mr-sm-2" name="keyword" type="search" placeholder="请输入关键词...">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
             </form>
-            <ul class="navbar-nav ml-auto">
-                <% if (user) { %>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">
-                        <%=user.username%>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="/admin">个人中心</a>
-                        <a class="dropdown-item" href="/user/logout">退出</a>
-                    </div>
-                </li>
-                <% } else { %>
-                <li class="nav-item">
-                    <a href="/login" class="nav-link">登录</a>
-                </li>
-                <% } %>
-            </ul>
+<!--            <ul class="navbar-nav ml-auto">-->
+<!--                <% if (user) { %>-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">-->
+<!--                        <%=user.username%>-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-menu dropdown-menu-right">-->
+<!--                        <a class="dropdown-item" href="/admin">个人中心</a>-->
+<!--                        <a class="dropdown-item" href="/user/logout">退出</a>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <% } else { %>-->
+<!--                <li class="nav-item">-->
+<!--                    <a href="/login" class="nav-link">登录</a>-->
+<!--                </li>-->
+<!--                <% } %>-->
+<!--            </ul>-->
         </div>
     </nav>
