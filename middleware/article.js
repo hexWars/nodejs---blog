@@ -114,7 +114,6 @@ module.exports = {
 	 *
 	 */
 	getCount: (req, res, next) => {
-		let id = req.params.id
 		Article.getCount().then(results => {
 			req.articleCount = results
 			next()
@@ -127,7 +126,7 @@ module.exports = {
 	 * 获取指定文章列表
 	 */
 	getPage: (req, res, next) => {
-		Article.getPage().then(results => {
+		Article.getPage(res.start,res.size).then(results => {
 			req.pageList = results
 			next()
 		}).catch(err => {
