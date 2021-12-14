@@ -50,7 +50,7 @@
         <% articles.forEach(article => { %>
         <div class="col my-3 card-body border d-flex justify-content-start">
             <!--            card 有边框的作用-->
-            <img data-src="holder.js/300x100p" class=" mr-2 imp-img" alt="图片">
+            <img src="<%= article.thumbnail %> " data-src="holder.js/300x100p" class=" mr-2 imp-img" alt="图片" style="height: 100%;width: 292px">
             <div class="card h-100 w-75">
                 <!--                media-left,style="float:left"无效-->
                 <div class="card-body">

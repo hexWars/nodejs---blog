@@ -23,7 +23,7 @@ module.exports = class Article extends require('./model') {
      */
     static getList() {
         return new Promise((resolve, reject) => {
-            let sql = 'SELECT id,title,content,`time` FROM article ORDER BY TIME DESC'
+            let sql = 'SELECT id,title,content,`time`,thumbnail FROM article ORDER BY TIME DESC'
             this.query(sql).then(results => {
                 resolve(results)
             }).catch(err => {
