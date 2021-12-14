@@ -64,16 +64,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <% page.list.forEach(article => { %>
                                         <tr>
-                                            <th>1</th>
-                                            <td>标题一</td>
+                                            <th><%= article.id %></th>
+                                            <td><%= article.title %></td>
                                             <td>
+                                                <% if (article.thumbnail) { %>
                                                 <i class="iconfont icon-photo" data-toggle="popover"
-                                                    data-content="<img src='../static/img/logo.png'>"></i>
+                                                    data-content="<img src='<%= article.thumbnail %>'>"></i>
+                                                <% } %>
                                             </td>
                                             <td>
                                                 <div class="custom-control custom-switch">
-                                                    <input type="checkbox" class="custom-control-input" id="hot1">
+                                                    <input type="checkbox" class="custom-control-input" id="hot1" <%=article.hot?'checked':''%> >
                                                     <label class="custom-control-label" for="hot1"></label>
                                                 </div>
                                             </td>
@@ -84,106 +87,7 @@
                                                     title="删除"><i class="iconfont icon-delete"></i>删除</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <th>2</th>
-                                            <td>标题二</td>
-                                            <td>
-                                                <i class="iconfont icon-photo" data-toggle="popover"
-                                                    data-content="<img src='../static/img/logo.png'>"></i>
-                                            </td>
-                                            <td>
-                                                <div class="custom-control custom-switch">
-                                                    <input type="checkbox" class="custom-control-input" id="hot2">
-                                                    <label class="custom-control-label" for="hot2"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="./edit.html" class="text-primary" title="编辑"><i
-                                                        class="iconfont icon-bianji"></i>编辑</a>
-                                                <a href="#" onclick="return confirm('确定删除？')" class="text-danger"
-                                                    title="删除"><i class="iconfont icon-delete"></i>删除</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>3</th>
-                                            <td>标题三</td>
-                                            <td>
-                                                <i class="iconfont icon-photo" data-toggle="popover"
-                                                    data-content="<img src='../static/img/logo.png'>"></i>
-                                            </td>
-                                            <td>
-                                                <div class="custom-control custom-switch">
-                                                    <input type="checkbox" class="custom-control-input" id="hot3">
-                                                    <label class="custom-control-label" for="hot3"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="./edit.html" class="text-primary" title="编辑"><i
-                                                        class="iconfont icon-bianji"></i>编辑</a>
-                                                <a href="#" onclick="return confirm('确定删除？')" class="text-danger"
-                                                    title="删除"><i class="iconfont icon-delete"></i>删除</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>4</th>
-                                            <td>标题四</td>
-                                            <td>
-                                                <i class="iconfont icon-photo" data-toggle="popover"
-                                                    data-content="<img src='../static/img/logo.png'>"></i>
-                                            </td>
-                                            <td>
-                                                <div class="custom-control custom-switch">
-                                                    <input type="checkbox" class="custom-control-input" id="hot4">
-                                                    <label class="custom-control-label" for="hot4"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="./edit.html" class="text-primary" title="编辑"><i
-                                                        class="iconfont icon-bianji"></i>编辑</a>
-                                                <a href="#" onclick="return confirm('确定删除？')" class="text-danger"
-                                                    title="删除"><i class="iconfont icon-delete"></i>删除</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>5</th>
-                                            <td>标题五</td>
-                                            <td>
-                                                <i class="iconfont icon-photo" data-toggle="popover"
-                                                    data-content="<img src='../static/img/logo.png'>"></i>
-                                            </td>
-                                            <td>
-                                                <div class="custom-control custom-switch">
-                                                    <input type="checkbox" class="custom-control-input" id="hot5">
-                                                    <label class="custom-control-label" for="hot5"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="./edit.html" class="text-primary" title="编辑"><i
-                                                        class="iconfont icon-bianji"></i>编辑</a>
-                                                <a href="#" onclick="return confirm('确定删除？')" class="text-danger"
-                                                    title="删除"><i class="iconfont icon-delete"></i>删除</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>6</th>
-                                            <td>标题六</td>
-                                            <td>
-                                                <i class="iconfont icon-photo" data-toggle="popover"
-                                                    data-content="<img src='../static/img/logo.png'>"></i>
-                                            </td>
-                                            <td>
-                                                <div class="custom-control custom-switch">
-                                                    <input type="checkbox" class="custom-control-input" id="hot6">
-                                                    <label class="custom-control-label" for="hot6"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="./edit.html" class="text-primary" title="编辑"><i
-                                                        class="iconfont icon-bianji"></i>编辑</a>
-                                                <a href="#" onclick="return confirm('确定删除？')" class="text-danger"
-                                                    title="删除"><i class="iconfont icon-delete"></i>删除</a>
-                                            </td>
-                                        </tr>
+                                        <% }) %>
                                     </tbody>
                                 </table>
                                 <nav class="d-flex justify-content-between border-top pt-3 px-3">

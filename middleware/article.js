@@ -121,6 +121,18 @@ module.exports = {
 		}).catch(err => {
 			next(err)
 		})
+	},
+
+	/**
+	 * 获取指定文章列表
+	 */
+	getPage: (req, res, next) => {
+		Article.getPage().then(results => {
+			req.pageList = results
+			next()
+		}).catch(err => {
+			next(err)
+		})
 	}
 
 }

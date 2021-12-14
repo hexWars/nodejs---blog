@@ -138,6 +138,20 @@ module.exports = class Article extends require('./model') {
 		})
 	}
 
+	/**
+	 * 获取指定页的文章列表
+	 */
+	static getPage() {
+		return new Promise((resolve,reject)=>{
+			let sql = 'select id,title,thumbnail,hot from article order by time desc '
+			this.query(sql).then(results=>{
+				resolve(results)
+			}).catch(err=>{
+				console.log('获取指定页的文章列表: ${err.message}')
+				reject(err)
+			})
+		})
+	}
 
 }
 
