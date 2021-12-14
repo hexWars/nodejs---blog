@@ -1,5 +1,5 @@
 /**
- * 首页子应用(首页路由)
+ * 首页子应用（首页路由）
  */
 
 const express = require('express')
@@ -12,13 +12,10 @@ const indexApp = express()
 
 indexApp.use(auth.getUser)
 
-// 渲染index模板,加载首页
+// 加载首页页面
 indexApp.get('/', [article.getHot, article.getList, category.getList], (req, res) => {
-	let {hots, articles, categories, user} = req
-	res.render('index', {hots: hots, articles: articles, categories: categories, user: user})
-	// res.render('index',{hots:req.hots,articles:req.articles})
+    let { hots, articles, categories, user } = req
+    res.render('index', { hots: hots, articles: articles, categories: categories, user: user })
 })
 
-
 module.exports = indexApp
-

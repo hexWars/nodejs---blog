@@ -1,5 +1,5 @@
 if ($('#g2_container').length) {
-    let url = '/admin/pvs'
+    let url = '/admin/index/pvs'
 
     const sliderDiv = document.createElement('div');
     sliderDiv.id = 'slider';
@@ -96,7 +96,7 @@ if ($('#editor').length) {
         .create(document.querySelector('#editor'), {
             language: 'zh-cn',
             ckfinder: {
-                uploadUrl: '/topic/upload'
+                uploadUrl: '/admin/article/ckeditor'
             }
         })
         .catch(error => {
@@ -159,13 +159,3 @@ function showToasts(title, message) {
     })
     toasts.toast('show')
 }
-
-
-
-
-if ($('.list-group-item').length) {
-    let href = location.pathname;
-    console.log(href)
-    $(`.list-group-item a[href='${href}']`).parent().addClass('active')
-}
-
