@@ -2,11 +2,10 @@ const mysql = require('mysql')
 
 /**
  * 数据模型的基类
- * 封装数据库操作
+ * 封装了数据库操作
  */
-
 module.exports = class Model {
-	//链接对象
+	// 连接对象
 	static conn = null
 
 	/**
@@ -21,13 +20,13 @@ module.exports = class Model {
 		})
 		Model.conn.connect(err => {
 			if (err) {
-				console.log('数据库连接失败: ${err.message}')
+				console.log(`数据库连接失败：${err.message}`)
 			}
 		})
 	}
 
 	/**
-	 * 关闭数据库
+	 * 关闭数据库连接
 	 */
 	static end() {
 		if (null != Model.conn) {
@@ -36,10 +35,9 @@ module.exports = class Model {
 	}
 
 	/**
-	 * 通用方法
-	 * @param sql 执行的sql语句
-	 * @param params 给sql语句的占位符进行赋值的参数
-	 * @returns {Promise<unknown>}
+	 * 通用查询方法
+	 * @param {string} sql 要执行的SQL语句
+	 * @param {Array} params 给SQL语句的占位符进行赋值的参数数组
 	 */
 	static query(sql, params = []) {
 		return new Promise((resolve, reject) => {

@@ -11,28 +11,29 @@
 </head>
 
 <body class="bg-light">
-<%-  include('header.html')  -%>
+    <%- include('header.html')  -%>
 
     <div class="container-fluid vh-100">
         <div class="row h-100">
-            <%- include('navs.html') -%>
+            <%- include('navs.html') -%> 
             <div class="col-10">
                 <div class="p-3 border mb-3 bg-white d-flex justify-content-between">
-                    <span>上次登录时间：<%= lastLoginTime.toLocaleString() %></span>
-                    <a href="#" class="text-dark text-decoration-none"><i class="iconfont icon-tuichu pr-1"></i>退出</a>
+                    <span>上次登录时间：<%=lastLoginTime.toLocaleString()%></span>
+                    <a href="/user/logout" class="text-dark text-decoration-none"><i
+                            class="iconfont icon-tuichu pr-1"></i>退出</a>
                 </div>
                 <div class="card-deck">
                     <div class="card text-center">
                         <div class="card-header bg-success text-white">总访问量</div>
-                        <div class="card-body"><%= pvTotal %></div>
+                        <div class="card-body"><%= pvTotal %> </div>
                     </div>
                     <div class="card text-center">
                         <div class="card-header bg-info text-white">总博文数</div>
-                        <div class="card-body"><%= articleCount %></div>
+                        <div class="card-body"><%= articleCount %> </div>
                     </div>
                     <div class="card text-center">
                         <div class="card-header bg-warning text-white">总类目数</div>
-                        <div class="card-body"><%= categoryCount %></div>
+                        <div class="card-body"><%= categoryCount %> </div>
                     </div>
                 </div>
                 <div class="row mt-3">

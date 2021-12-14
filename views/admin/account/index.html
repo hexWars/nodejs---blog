@@ -11,7 +11,7 @@
 </head>
 
 <body class="bg-light">
-<%-  include('../header.html')  -%>
+    <%- include('../header.html')  -%>
 
     <div class="container-fluid vh-100">
         <div class="row h-100">
@@ -30,27 +30,31 @@
                                 <form action="/article/add" type="">
                                     <div class="form-row">
                                         <label for="title" class="col-2 text-center col-form-label">登录账号：</label>
-                                        <input type="text" class="col-8 form-control" name="title" id="title" value="admin" required>
+                                        <input type="text" class="col-8 form-control" name="title" id="title"
+                                            value="admin" required>
                                     </div>
                                     <div class="form-row mt-3">
                                         <label for="category_id" class="col-2 text-center col-form-label">登录密码：</label>
-                                        <input type="password" class="col-8 form-control" name="title" id="title" value="admin" required>
+                                        <input type="password" class="col-8 form-control" name="title" id="title"
+                                            value="admin" required>
                                     </div>
                                     <div class="form-row mt-3">
                                         <label for="category_id" class="col-2 text-center col-form-label">确认密码：</label>
-                                        <input type="password" class="col-8 form-control" name="title" id="title" value="admin" required>
+                                        <input type="password" class="col-8 form-control" name="title" id="title"
+                                            value="admin" required>
                                     </div>
                                     <div class="form-row mt-3">
                                         <label for="content" class="col-2 text-center col-form-label">网站logo：</label>
                                         <div class="col-8">
-                                            <input type="file" class="d-none" id="customFile" name="logo" accept="image/*">
+                                            <input type="file" class="d-none" id="customFile" name="logo"
+                                                accept="image/*">
                                             <label for="customFile" class="position-relative">
-                                                <img src="../static/img/logo.png" data-src="holder.js/200x200?text=点击上传"
+                                                <img src="/admin/img/logo.png" data-src="holder.js/200x200?text=点击上传"
                                                     class="img-thumbnail" width="200" height="200">
                                                 <button type="button"
                                                     class="delimg btn btn-danger btn-sm position-absolute"
                                                     title="删除">&times;</button>
-                                            </label
+                                            </label </div>
                                         </div>
                                     </div>
                                     <div class="form-row mt-3">
@@ -73,8 +77,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.6/holder.min.js"></script>
     <script src="https://gw.alipayobjects.com/os/lib/antv/g2/3.5.12/dist/g2.min.js"></script>
     <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.2/dist/data-set.min.js"></script>
-    <script src="../static/ueditor/ueditor.config.js"></script>
-    <script src="../static//ueditor/ueditor.all.min.js"></script>
+    <script src="/admin/ueditor/ueditor.config.js"></script>
+    <script src="/admin//ueditor/ueditor.all.min.js"></script>
     <script src="/admin/js/public.js"></script>
 </body>
 
