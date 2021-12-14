@@ -26,7 +26,7 @@ loginApp.post('/', (req, res, next) => {
             log.add(req, res, next)
             // session存储（key=value）
             req.session.user = result
-            res.redirect('/')
+            res.redirect('/admin/')
         } else {
             res.render('login', { msg: '登录失败！用户名或密码错误' })
         }

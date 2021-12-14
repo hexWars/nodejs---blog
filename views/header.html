@@ -19,45 +19,12 @@
         /*    height: 100px;*/
         /*}*/
     </style>
-    <script>
-	    $(document).ready(function () {
-
-		    // Show the navbar when the page is scrolled up
-		    let MQL = 992;
-
-		    //primary navigation slide-in effect
-		    if ($(window).width() > MQL) {
-			    let headerHeight = $('#mainNav').height();
-			    $(window).on('scroll', {
-					    previousTop: 0
-				    },
-				    function () {
-					    var currentTop = $(window).scrollTop();
-					    //check if user is scrolling up
-					    if (currentTop < this.previousTop) {
-						    //if scrolling up...
-						    if (currentTop > 0 && $('#mainNav').hasClass('is-fixed')) {
-							    $('#mainNav').addClass('is-visible');
-						    }
-						    // when scrolling to top
-						    else {
-							    $('#mainNav').removeClass('is-visible is-fixed');
-						    }
-					    } else if (currentTop > this.previousTop) {
-						    //if scrolling down...
-						    $('#mainNav').removeClass('is-visible');
-						    if (currentTop > headerHeight && !$('#mainNav').hasClass('is-fixed')) $('#mainNav').addClass('is-fixed');
-					    }
-					    this.previousTop = currentTop;
-				    });
-		    }
-
-	    }
-    </script>
 </head>
 
 <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
+<!--    <nav class="navbar navbar-fixed-top navbar-transparent" role="navigation">-->
+<!--    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-transparent navbar-fixed-top" id="mainNav" role="navigation">-->
         <a class="navbar-brand" href="#">
             <img src="/img/logo.png" width="30" height="30" alt="">
         </a>

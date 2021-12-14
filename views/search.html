@@ -2,11 +2,13 @@
 
 <div class="container mt-5">
     <h2 class="mb-4">搜索结果（搜索词：<%=keyword%> ）</h2>
-    <div class="row row-cols-4">
+    <div class="row row-cols-1">
         <% articles.forEach(article => { %>
-        <div class="col my-3">
-            <div class="card h-100">
-                <img src="holder.js/100px150" class="card-img-top" alt="...">
+        <div class="col my-3 card-body border d-flex justify-content-start">
+            <!--            card 有边框的作用-->
+            <img data-src="holder.js/300x100p" class=" mr-2 imp-img" alt="图片">
+            <div class="card h-100 w-75">
+                <!--                media-left,style="float:left"无效-->
                 <div class="card-body">
                     <h5 class="card-title"><%= article.title %></h5>
                     <p class="card-text"><small class="text-muted"><%= article.time.toLocaleString() %></small></p>
