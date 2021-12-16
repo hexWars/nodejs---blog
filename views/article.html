@@ -1,40 +1,53 @@
 <%- include('header.html')  -%>
-<div class="container mt-4">
-    <nav>
-        <ol class="breadcrumb bg-white">
-            <li class="breadcrumb-item"><a href="/">首页</a></li>
-            <li class="breadcrumb-item"><a href="/article/list/<%=article.category_id%>"><%=article.name%></a></li>
-            <li class="breadcrumb-item active"><%=article.title%></li>
-        </ol>
-    </nav>
-    <div class="card content">
-        <div class="card-header bg-white">
-            <h3 class="card-title m-0"><%=article.title%></h3>
-            <p class="text-muted small mt-2 m-0">
-                <span class="mr-3">发表时间：<%=article.time.toLocaleString()%></span>
-                <span class="mr-1">点击：<%=article.hits%></span>
-            </p>
-        </div>
-        <div class="card-body"><%-article.content%></div>
-        <div class="card-footer bg-white border-0">
-            <% tabs.forEach(tab => { %>
-            <span class="badge badge-pill"><%=tab.name%> </span>
-            <% }) %>
+
+<div class="container-fluid" style="background-color: #b0d0ff" >
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10" style="background-color:rgba(255,255,255,0.6);">
+            <br>
+            <nav>
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/">首页</a></li>
+                    <li class="breadcrumb-item"><a href="/article/list/<%=article.category_id%>"><%=article.name%></a></li>
+                    <li class="breadcrumb-item active"><%=article.title%></li>
+                </ol>
+            </nav>
+            <div class="card content">
+                <div class="card-header bg-white">
+                    <h3 class="card-title m-0"><%=article.title%></h3>
+                    <p class="text-muted small mt-2 m-0">
+                        <span class="mr-3">发表时间：<%=article.time.toLocaleString()%></span>
+                        <span class="mr-1">点击：<%=article.hits%></span>
+                    </p>
+                </div>
+                <div class="card-body"><%-article.content%></div>
+                <div class="card-footer bg-white border-0">
+                    <% tabs.forEach(tab => { %>
+                    <span class="badge badge-pill"><%=tab.name%> </span>
+                    <% }) %>
+                </div>
+            </div>
+            <nav>
+                <ul class="pagination mt-3">
+                    <% if (prev) { %>
+                    <li class="page-item">
+                        <a class="page-link" href="/article/<%=prev.id%>">上一篇：<%=prev.title%></a>
+                    </li>
+                    <% } %>
+                    <% if (next) { %>
+                    <li class="page-item ml-auto">
+                        <a class="page-link" href="/article/<%=next.id%>">下一篇：<%=next.title%></a>
+                    </li>
+                    <% } %>
+                </ul>
+            </nav>
         </div>
     </div>
-    <nav>
-        <ul class="pagination mt-3">
-            <% if (prev) { %>
-            <li class="page-item">
-                <a class="page-link" href="/article/<%=prev.id%>">上一篇：<%=prev.title%></a>
-            </li>
-            <% } %>
-            <% if (next) { %>
-            <li class="page-item ml-auto">
-                <a class="page-link" href="/article/<%=next.id%>">下一篇：<%=next.title%></a>
-            </li>
-            <% } %>
-        </ul>
-    </nav>
+    <br>
+    <br>
+    <br>
 </div>
 <%- include('footer.html')  -%>
