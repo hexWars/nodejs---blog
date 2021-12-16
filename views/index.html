@@ -1,10 +1,10 @@
 <%- include('header.html')  -%>
 
-<div id="carouselExampleIndicators" class=" slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class=" slide" data-ride="carousel" >
     <div class="">
         <div class="carousel-item active">
-            <img src="http://pic.sehnsucht.top/wallhaven-z8x7pw_1636553860812.png"
-                 data-src="holder.js/100px400?text=图一&random=yes" class="d-block w-100 h-100" alt="...">
+            <img src="/img/top.jpg"
+                 class="d-block w-100 h-100" style="z-index: 9999" >
         </div>
     </div>
 </div>
@@ -22,7 +22,7 @@
         <br>
         <br>
         <br>
-        <div class="row imp-bnuz">
+        <div class="row imp-bnuz" >
             <h1 class="center-text glitch" data-text="BNUZ" style="margin-top: auto">
                 BNUZ小组作业<br>
                 <a href="//wpa.qq.com/msgrd?v=3&uin=1322423005&site=qq&menu=yes" target="_blank" class="i18n"
@@ -95,61 +95,72 @@
         <!--        todo 更改首页,更改编辑器-->
     </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<div class="container mt-5">
-    <h2 class="mb-4">热门推荐</h2>
-    <div class="card-deck">
-        <% hots.forEach(hot => { %>
-        <div class="card">
-            <img src="<%= hot.thumbnail %> " data-src="holder.js/100px200" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title"><%= hot.title %> </h5>
-                <p class="card-text"><small class="text-muted"><%= hot.time.toLocaleString() %></small></p>
-                <p class="card-text"><%= hot.content.replace(/<[^>]+>/g,'').substring(0,100) %>...</p>
-            </div>
-            <div class="card-footer bg-white border-0">
-                <a href="/article/<%=hot.id%>" class="btn btn-primary float-right stretched-link">查看详情</a>
-            </div>
-        </div>
-        <% }) %>
-    </div>
-</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container-fluid" style="background-color: #b0d0ff" >
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10" style="background-color:rgba(255,255,255,0.6);"/>
+            <br>
+            <br>
+            <h2 class="mb-4">热门推荐</h2>
 
-<div class="container mt-5">
-    <h2 class="mb-4">最新博文</h2>
-    <div class="row row-cols-1">
-        <% articles.forEach(article => { %>
-        <div class="col my-3 card-body border d-flex justify-content-start">
-            <!--            card 有边框的作用-->
-            <img src="<%= article.thumbnail %> " data-src="holder.js/300x100p" class=" mr-2 imp-img" alt="图片"
-                 style="height: 100%;width: 292px">
-            <div class="card h-100 w-75">
-                <!--                media-left,style="float:left"无效-->
-                <div class="card-body">
-                    <h5 class="card-title"><%= article.title %></h5>
-                    <p class="card-text"><small class="text-muted"><%= article.time.toLocaleString() %></small></p>
-                    <p class="card-text"><%= article.content.replace(/<[^>]+>/g,'').substring(0,100) %>...</p>
-                    <a href="/article/<%=article.id%>" class="stretched-link"></a>
+            <% hots.forEach(hot => { %>
+            <div class="row">
+                <div class="col-my-2"></div>
+                <div class="col my-8 center-block">
+                    <div class="jumbotron" style="background: url('<%=hot.thumbnail %>') no-repeat center;">
+
+                        <div class="card-body col-md-5" style="background-color:rgba(255,255,255,0.6);">
+                            <h5 class="card-title"><%=hot.title %></h5>
+                            <p class="card-text"><small class="text-muted"><%=hot.time.toLocaleString() %></small></p>
+                            <p class="card-text"><%=hot.content.replace(/<[^>]+>/g,'').substring(0,100) %>...</p>
+                            <a href="/article/<%=hot.id %>" class="stretched-link"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <% }) %>
+
         </div>
-        <% }) %>
     </div>
 </div>
+
+<div class="container-fluid" style="background-color: #b0d0ff">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10" style="background-color:rgba(255,255,255,0.6);"/>
+            <br>
+            <br>
+            <h2 class="mb-4">最新博文</h2>
+
+
+            <% articles.forEach(article => { %>
+            <div class="row">
+                <div class="col-my-2"></div>
+                <div class="col my-8 ">
+                    <div class="jumbotron" style="background: url('<%=article.thumbnail %>') repeat-x center ;">
+                        <div class="card-body col-md-5" style="background-color:rgba(255,255,255,0.6);">
+                            <h5 class="card-title"><%=article.title %></h5>
+                            <p class="card-text"><small class="text-muted"><%=article.time.toLocaleString() %></small></p>
+                            <p class="card-text"><%=article.content.replace(/<[^>]+>/g,'').substring(0,100) %>...</p>
+                            <a href="/article/<%=article.id %>" class="stretched-link"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+
+        </div>
+    </div>
+</div>
+
 
 
 <%- include('footer.html')  -%>
