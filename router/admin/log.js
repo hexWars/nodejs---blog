@@ -10,7 +10,7 @@ logApp.get('/', log.getCount, (req, res, next) => {
     let page = {
         p: req.query.p ? req.query.p : 1,
         count: req.count,
-        size: 3
+        size: 6
     }
     page.total = Math.ceil(page.count / page.size)
     page.p = page.p > page.total ? page.total : page.p

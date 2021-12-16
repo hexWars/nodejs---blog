@@ -10,7 +10,7 @@ const articleApp = express()
 articleApp.get('/', article.getCount, (req, res, next) => {
     let { articleCount } = req
 
-    let size = 3 // 每页显示5条
+    let size = 6 // 每页显示5条
     req.page = {}
     req.page.count = articleCount
     req.page.total = Math.ceil(req.page.count / size)
