@@ -1,10 +1,4 @@
-<iframe src="https://www.lovestu.com/api/project/cnmapyinqing/obj.php" height="500" frameborder="no" border="0" width="100%"> </iframe>
 
-<!-- 念两句诗-->
-<img alt="今日诗词" src="https://v2.jinrishici.com/one.svg" style="max-width:100%; display: block; margin: 0 auto;">
-
-<!--天气代码-->
-<div id="he-plugin-simple"></div>
 <script>
 	WIDGET = {
 		"CONFIG": {
@@ -40,7 +34,7 @@
 </script>
 <script src="dist/app.js"></script>
 
-<footer class="bg-light p-3 mt-3  text-center text-secondary small">
+<footer class="p-3 text-center text-secondary small" style="background-color: #b0d0ff;margin: 0px;">
     <div class="footer-device">
         <!-- 请尊重作者，请务必保留版权 -->
         <p style="font-family: 'Ubuntu', sans-serif;">
@@ -65,26 +59,30 @@
     <p>制作小组:蔡伟杰,李天宇,李佳阳</p>
 </footer>
 
+<div class="waifu" style="position: fixed;bottom: 0px;left: 0px;">
+<!--    <div class="waifu-tips"></div>-->
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+    </div>
+</div>
 
+<script src="assets/waifu-tips.js"></script>
+<script src="assets/live2d.js"></script>
+<script type="text/javascript">initModel("assets/")</script>
 
 
 <script src="/js/popper.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/holder.min.js"></script>
 <script src="/js/public.js"></script>
-<script type="text/javascript" charset="utf-8"  src="/js/L2Dwidget.0.min.js"></script>
-<script type="text/javascript" charset="utf-8"  src="/js/L2Dwidget.min.js"></script>
-<script type="text/javascript">
-	L2Dwidget.init({"display": {
-			"superSample": 2,
-			"width": 200,
-			"height": 400,
-			"position": "right",
-			"hOffset": 0,
-			"vOffset": 0
-		}
-	});
-</script>
+
 <script>
 	$(".fixed-top").autoHidingNavbar()
 </script>
