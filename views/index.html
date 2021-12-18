@@ -57,12 +57,12 @@
                 <div class="col-my-2"></div>
                 <div class="col my-8 center-block">
                     <div class="jumbotron title" style="background: url('<%=hot.thumbnail %>') no-repeat center;background-size: 100%;">
-
+                        <a href="/article/<%=hot.id %>" class="stretched-link"></a>
                         <div class="card-body col-md-5" style="background-color:rgba(255,255,255,0.6);">
                             <h5 class="card-title"><%=hot.title %></h5>
                             <p class="card-text"><small class="text-muted"><%=hot.time.toLocaleString() %></small></p>
                             <p class="card-text"><%=hot.content.replace(/<[^>]+>/g,'').substring(0,100) %>...</p>
-                            <a href="/article/<%=hot.id %>" class="stretched-link"></a>
+
                         </div>
                     </div>
                 </div>
@@ -87,11 +87,12 @@
                 <div class="col-my-2"></div>
                 <div class="col my-8 ">
                     <div class="jumbotron title" style="background: url('<%=article.thumbnail %>') repeat-x center;background-size: 100%;">
+                        <a href="/article/<%=article.id %>" class="stretched-link"></a>
                         <div class="card-body col-md-5" style="background-color:rgba(255,255,255,0.6);">
                             <h5 class="card-title"><%=article.title %></h5>
                             <p class="card-text"><small class="text-muted"><%=article.time.toLocaleString() %></small></p>
                             <p class="card-text"><%=article.content.replace(/<[^>]+>/g,'').substring(0,100) %>...</p>
-                            <a href="/article/<%=article.id %>" class="stretched-link"></a>
+
                         </div>
                     </div>
                 </div>
