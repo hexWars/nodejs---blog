@@ -6,6 +6,7 @@ const session = require('cookie-session')
 const multer = require('multer')
 const path = require('path')
 const fs = require('fs')
+const bodyParser = require('body-parser')
 
 // 创建主应用
 const app = express()
@@ -28,6 +29,11 @@ app.use(express.static('static'))
 
 // POST请求处理
 app.use(express.urlencoded({ extended: true }))
+
+//请求最大大小设置
+app.use(bodyParser.json({limit:'100mb'}));
+app.use(bodyParser.urlencoded({ limit:'100mb', extended: true }));
+
 
 // SESSION配置
 app.use(session({
@@ -86,4 +92,4 @@ app.get('/user/logout', (req, res) => {
 })
 
 // 监听服务器
-app.listen(3000)
+app.listen(80)
