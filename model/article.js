@@ -56,7 +56,7 @@ module.exports = class Article extends require('./model') {
      */
     static getListBykeywrod(keyword) {
         return new Promise((resolve, reject) => {
-            let sql = 'SELECT id,title,content,`time`,thumbnail FROM article WHERE title LIKE ? ORDER BY TIME DESC'
+            let sql = "SELECT id,title,content,`time`,thumbnail FROM article WHERE title regexp ? ORDER BY TIME DESC"
             this.query(sql, `%${keyword}%`).then(results => {
                 resolve(results)
             }).catch(err => {

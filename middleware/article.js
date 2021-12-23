@@ -1,6 +1,6 @@
 const Article = require('../model/article')
 const Tab = require('../model/tab')
-
+const nodejieba = require("nodejieba");
 /**
  * 文章中间件
  */
@@ -44,7 +44,13 @@ module.exports = {
      */
     getListBykeywrod: (req, res, next) => {
         let keyword = req.query.keyword
-        Article.getListBykeywrod(keyword).then(results => {
+        //console.log(keyword);
+        let jiebakey=nodejieba.cut(keyword);
+        //console.log(jiebakey);
+        let key=jiebakey[0];
+        for(var i=1;i<jiebakey.length;i++)key+="|"+jiebakey[i];
+        //console.log(key);
+        Article.getListBykeywrod(key).then(results => {
             req.articles = results
             next()
         }).catch(err => {
