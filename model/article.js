@@ -51,13 +51,13 @@ module.exports = class Article extends require('./model') {
 
 
     /**
-     * 获取指定关键词的文章列表
+     * 获取关键词的文章列表
      * @param {string} keyword 关键词
      */
     static getListBykeywrod(keyword) {
         return new Promise((resolve, reject) => {
             let sql = "SELECT id,title,content,`time`,thumbnail FROM article WHERE title regexp ? ORDER BY TIME DESC"
-            this.query(sql, `%${keyword}%`).then(results => {
+            this.query(sql, `${keyword}`).then(results => {
                 resolve(results)
             }).catch(err => {
                 console.log(`获取指定关键词的文章列表失败：${err.message}`)

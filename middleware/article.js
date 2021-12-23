@@ -44,12 +44,11 @@ module.exports = {
      */
     getListBykeywrod: (req, res, next) => {
         let keyword = req.query.keyword
-        //console.log(keyword);
         let jiebakey=nodejieba.cut(keyword);
-        //console.log(jiebakey);
+        console.log(jiebakey);
         let key=jiebakey[0];
         for(var i=1;i<jiebakey.length;i++)key+="|"+jiebakey[i];
-        //console.log(key);
+        console.log(key);
         Article.getListBykeywrod(key).then(results => {
             req.articles = results
             next()
