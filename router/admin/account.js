@@ -1,5 +1,5 @@
 /**
- * 后台文章管理
+ * 后台个人信息管理
  */
 const express = require('express')
 

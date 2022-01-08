@@ -13,6 +13,7 @@ module.exports = class Model {
 	 */
 	static connection() {
 		Model.conn = mysql.createConnection({
+			//host: 'rm-wz9hrxo3vkv4w2u6lwo.mysql.rds.aliyuncs.com',
 			host: '127.0.0.1',
 			user: 'root',
 			password: 'Lty100324',
